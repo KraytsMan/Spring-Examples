@@ -2,20 +2,33 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>Softjourn</groupId>
-  <artifactId>Spring Examples</artifactId>
+  <artifactId>SpringExamples</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>Spring Examples Maven Webapp</name>
   <url>http://maven.apache.org</url>
-  <dependencies>
+
+  <properties>
+      <java.version>1.8</java.version>
+      <spring.vesion>4.1.7.RELEASE</spring.vesion>
+  </properties>
+
+<dependencies>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-beans</artifactId>
+        <version>${spring.vesion}</version>
     </dependency>
-  </dependencies>
-  <build>
-    <finalName>Spring Examples</finalName>
-  </build>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>${spring.vesion}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.maven</groupId>
+        <artifactId>maven-model</artifactId>
+        <version>3.0</version>
+    </dependency>
+</dependencies>
+
 </project>
