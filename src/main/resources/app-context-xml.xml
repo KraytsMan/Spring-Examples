@@ -66,4 +66,59 @@ http://www.springframework.org/schema/util/spring-util-3.1.xsd">
         </constructor-arg>
     </bean>
 
+    <bean id="injectCollection" class="chapter2.CollectionInjection">
+    <property name="map">
+    <map>
+    <entry key="someValue">
+    <value>Hello World!</value>
+    </entry>
+        <entry key="someBean">
+            <ref local="oracle"/>
+        </entry>
+    </map>
+    </property>
+        <property name="properties">
+            <props>
+                <prop key="firstName">Clarence</prop>
+                <prop key="secondName">Ho</prop>
+            </props>
+        </property>
+        <property name="set">
+            <set>
+                <value>Hello World!</value>
+                <ref local="oracle"/>
+            </set>
+        </property>
+        <property name="list">
+            <list>
+                <value>Hello World!</value>
+                <ref local="oracle"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="name1" name="name2 name3,name4;name5" class="java.lang.String"/>
+    <alias name="name1" alias="name6"/>
+
+    <bean id="nonSingleton" class="java.lang.String" scope="prototype">
+        <constructor-arg>
+            <value>Clarence Ho</value>
+        </constructor-arg>
+    </bean>
+
+    <bean id="inheritParent" class="chapter2.SimpleBean">
+        <property name="name">
+            <value>Clarence Ho</value>
+        </property>
+        <property name="age">
+            <value>22</value>
+        </property>
+    </bean>
+    <bean id="inheritChild" class="chapter2.SimpleBean"
+          parent="inheritParent">
+        <property name="age">
+            <value>35</value>
+        </property>
+    </bean>
+
 </beans>
